@@ -1,0 +1,160 @@
+h1 {
+    color: red;
+}
+
+body {
+    margin: 0;
+	padding: 0;
+	min-height: 160vh;
+	overflow: hidden;
+    display: contents;
+}
+
+.background {
+    background: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: -2;
+}
+
+header {
+	height: 100vh;
+	background: #000;
+}
+
+header .grid {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../images/grid.svg) repeat;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background-size: 500px;
+}
+
+header .light {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 25em;
+	height: 25em;
+	filter: blur(15px);
+	background: linear-gradient(
+	    90deg, #335bf4 0%, #2ae9c9 100%
+	);
+	z-index: 0;
+}
+
+.container {
+	background: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+}
+
+.drop-zone { 
+	background: #1a1a1a;
+    max-width: 200px;
+    height: 200px;
+    padding: 25px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccc;
+    border: 4px dashed #009578;
+    border-radius: 10px;
+    position: relative;
+	z-index: 3;
+}
+
+.drop-zone--over { 
+    border-style: solid;
+}
+
+.drop-zone__input { 
+    display: none;
+}
+
+.drop-zone__thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .btn_back {
+    justify-self: 60%;
+	box-sizing: border-box;
+	background: linear-gradient(
+	155deg, #020024 0%, red 0%,
+	#ffab00 12%, #e0ff00 24%,
+	#00ff08 36%, #00e4ff 48%,
+	#0005ff 60%, #fe00e7 72%,
+	red 84%, #ffa200 96%
+	);
+	width: 13.6em;
+	height: 4em;
+	animation: borderAnim 55s linear infinite;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	transition: 0.3s;
+}
+
+.btn_back:hover { background: #fff; }
+
+.btn_back::before, .btn_back .btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+}
+
+.btn_back::before {
+	content: ' ';
+	width: 100%;
+	height: 100%;
+	background: inherit;
+	position: absolute;
+	filter: blur(4px);
+}
+
+.btn_back .btn {
+	background: linear-gradient(
+	147deg, #000000 0%, #181818 74%
+	);
+	width: 12em;
+	height: 3.3em;
+	text-align: center;
+	text-decoration: none;
+	padding: 1.1em;
+	color: #fff;
+	font-size: 1.1em;
+	letter-spacing: 3px;
+}
+
+@keyframes borderAnim {
+	0% { background-position: 0.0; }
+	50% { background-position: 18.75em 31.25em; }
+	100% { background-position: 0.1em 0.1em; }
+}
