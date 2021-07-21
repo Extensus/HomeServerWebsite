@@ -7,16 +7,17 @@ body {
 	padding: 0;
 	min-height: 160vh;
 	overflow: hidden;
-    display: contents;
 }
 
-.background {
-    background: #2b2b2b;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: -2;
+.container {
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	position: relative;
 }
+
 
 header {
 	height: 100vh;
@@ -35,7 +36,7 @@ header .grid {
 }
 
 header .light {
-	position: relative;
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -48,13 +49,16 @@ header .light {
 	z-index: 0;
 }
 
-.container {
-	background: #2b2b2b;
-    display: flex;
-    flex-direction: column;
+.action-container {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .drop-zone { 
+	margin: 6px;
 	background: #1a1a1a;
     max-width: 200px;
     height: 200px;
@@ -87,9 +91,9 @@ header .light {
     background-color: #cccccc;
     background-size: cover;
     position: relative;
-  }
+}
   
-  .drop-zone__thumb::after {
+.drop-zone__thumb::after {
     content: attr(data-label);
     position: absolute;
     bottom: 0;
@@ -100,10 +104,14 @@ header .light {
     background: rgba(0, 0, 0, 0.75);
     font-size: 14px;
     text-align: center;
-  }
+}
 
-  .btn_back {
-    justify-self: 60%;
+.btn_back {
+	margin: 6px;
+    position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	box-sizing: border-box;
 	background: linear-gradient(
 	155deg, #020024 0%, red 0%,

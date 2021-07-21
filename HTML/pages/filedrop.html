@@ -11,23 +11,25 @@
 		<title>database</title>
     </head>
     <body>
-        <div class="background">
+        <div class="container">
 			<header id="hex-grid">
 				<div class="light"></div>
 				<div class="grid"></div>
             </header>
-        </div>	
-		<div class="container">
-            <div class="drop-zone">
-                <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                <input type="file" name="myFile" class="drop-zone__input">
+            <div class="action-container">
+                <div class="drop-zone">
+                    <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                    <input type="file" name="myFile" class="drop-zone__input">
+                </div>
+                <div id="return button" class="btn_back">
+                    <a class="btn" href="../text.html">Back to Main</a>
+                </div>
             </div>
-            <div id="return button" class="btn_back">
-                <a class="btn" href="../HTML/text.html">Back to Main</a>
-            </div>
-		</div>
+        </div>
+    </body>
+        
+		
         
         <script src="../js/main.js" async defer></script>
-		<!--script src="../js/filedrop.js" async defer></script-->
-    </body>
+		<script src="../js/filedrop.js" async defer></script>
 </html>
