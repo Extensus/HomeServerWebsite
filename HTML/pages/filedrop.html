@@ -18,7 +18,11 @@
             </header>
             <div class="action-container">
                 <div class="drop-zone">
-                    <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                    <span id="drop-zone__prompt" class="drop-zone__prompt">
+                        <p id="temp-text">Drop file here or click to upload</p>
+                        <ul id="uploadedFiles">
+                        </ul>
+                    </span>
                     <input type="file" name="myFile" class="drop-zone__input">
                 </div>
                 <div id="return button" class="btn_back">

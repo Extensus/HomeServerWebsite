@@ -1,28 +1,28 @@
 document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
     const dropZoneElement = inputElement.closest(".drop-zone");
   
-    dropZoneElement.addEventListener("click", (e) => {
+    dropZoneElement.addEventListener("click", (e) => { //Listener
       inputElement.click();
     });
   
-    inputElement.addEventListener("change", (e) => {
+    inputElement.addEventListener("change", (e) => { //Listener
       if (inputElement.files.length) {
         updateThumbnail(dropZoneElement, inputElement.files[0]);
       }
     });
   
-    dropZoneElement.addEventListener("dragover", (e) => {
+    dropZoneElement.addEventListener("dragover", (e) => { //Listener
       e.preventDefault();
       dropZoneElement.classList.add("drop-zone--over");
     });
   
-    ["dragleave", "dragend"].forEach((type) => {
+    ["dragleave", "dragend"].forEach((type) => { //Drag-Drop Handler
       dropZoneElement.addEventListener(type, (e) => {
         dropZoneElement.classList.remove("drop-zone--over");
       });
     });
   
-    dropZoneElement.addEventListener("drop", (e) => {
+    dropZoneElement.addEventListener("drop", (e) => { //Drag-Drop prevent default reaction
       e.preventDefault();
   
       if (e.dataTransfer.files.length) {
@@ -40,32 +40,18 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
    * @param {HTMLElement} dropZoneElement
    * @param {File} file
    */
-  function updateThumbnail(dropZoneElement, file) {
-    let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-  
-    // First time - remove the prompt
-    if (dropZoneElement.querySelector(".drop-zone__prompt")) {
-      dropZoneElement.querySelector(".drop-zone__prompt").remove();
-    }
-  
-    // First time - there is no thumbnail element, so lets create it
-    if (!thumbnailElement) {
-      thumbnailElement = document.createElement("div");
-      thumbnailElement.classList.add("drop-zone__thumb");
-      dropZoneElement.appendChild(thumbnailElement);
-    }
-  
-    thumbnailElement.dataset.label = file.name;
-  
-    // Show thumbnail for image files
-    if (file.type.startsWith("image/")) {
-      const reader = new FileReader();
-  
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
-      };
-    } else {
-      thumbnailElement.style.backgroundImage = null;
-    }
+
+  let uploadedFiles = [];
+  function updateThumbnail(dropZoneElement, file) { 
+    let dropPrompt = document.getElementById('temp-text');
+    let elementUploaded = document.getElementById('uploadedFiles');
+
+      if (!elementUploaded) {
+        dropPrompt.remove();
+        uploadedFiles.forEach((item) => {
+          let li = document.createElement('li');
+          li.innerText = item;
+          elementUploaded.appendChild(li);
+        });
+      }
   }
