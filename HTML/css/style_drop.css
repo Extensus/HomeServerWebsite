@@ -58,17 +58,10 @@ header .light {
 	align-items: center;
 }
 
-<<<<<<< Updated upstream
 .drop-zone { 
 	margin: 6px;
 	background: #1a1a1a;
     max-width: 200px;
-=======
-.drop-zone {
-    margin: 6px;
-    background: #1a1a1a;
-    width: 200px;
->>>>>>> Stashed changes
     height: 200px;
     padding: 25px;
     text-align: center;
