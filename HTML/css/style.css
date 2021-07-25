@@ -55,7 +55,7 @@ header .light {
 	align-items: center;
 }
 
-.database {
+.database, .dashboard, .notepad {
 	box-sizing: border-box;
 	background: linear-gradient(
 	155deg, #020024 0%, red 0%,
@@ -72,9 +72,11 @@ header .light {
 	transition: 0.3s;
 }
 
-.database:hover { background: #fff; }
+.database:hover, .dashboard:hover, .notepad:hover {
+	background: #fff;
+}
 
-.database::before, .database .btn {
+.database::before, .dashboard::before, .notepad::before, .database .btn, .dashboard .btn, .notepad .btn {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -82,7 +84,7 @@ header .light {
 	box-sizing: border-box;
 }
 
-.database::before {
+.database::before, .dashboard::before, .notepad::before {
 	content: ' ';
 	width: 100%;
 	height: 100%;
@@ -91,10 +93,10 @@ header .light {
 	filter: blur(4px);
 }
 
-.database .btn {
+.database .btn, .dashboard .btn, .notepad .btn {
 	background: linear-gradient(
-	147deg, #000000 0%, #181818 74%
-	);
+		147deg, #000000 0%, #181818 74%
+		);
 	width: 9.8em;
 	height: 3.3em;
 	text-align: center;
@@ -105,109 +107,7 @@ header .light {
 	letter-spacing: 3px;
 }
 
-.dashboard {
-	box-sizing: border-box;
-	background: linear-gradient(
-	155deg, #020024 0%, red 0%,
-	#ffab00 12%, #e0ff00 24%,
-	#00ff08 36%, #00e4ff 48%,
-	#0005ff 60%, #fe00e7 72%,
-	red 84%, #ffa200 96%
-	);
-	width: 11em;
-	height: 4em;
-	animation: borderAnim 55s linear infinite;
-	position: relative;
-	font-family: Arial, Helvetica, sans-serif;
-	transition: 0.3s;
-}
-
-.dashboard:hover { background: #fff; }
-
-.dashboard::before, .dashboard .btn {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	box-sizing: border-box;
-}
-
-.dashboard::before {
-	content: ' ';
-	width: 100%;
-	height: 100%;
-	background: inherit;
-	position: absolute;
-	filter: blur(4px);
-}
-
-.dashboard .btn {
-	background: linear-gradient(
-	147deg, #000000 0%, #181818 74%
-	);
-	width: 9.8em;
-	height: 3.3em;
-	text-align: center;
-	text-decoration: none;
-	padding: 1.1em;
-	color: #fff;
-	font-size: 1.1em;
-	letter-spacing: 3px;
-}
-
-.notepad{
-	box-sizing: border-box;
-	background: linear-gradient(
-	155deg, #020024 0%, red 0%,
-	#ffab00 12%, #e0ff00 24%,
-	#00ff08 36%, #00e4ff 48%,
-	#0005ff 60%, #fe00e7 72%,
-	red 84%, #ffa200 96%
-	);
-	width: 11em;
-	height: 4em;
-	animation: borderAnim 55s linear infinite;
-	position: relative;
-	font-family: Arial, Helvetica, sans-serif;
-	transition: 0.3s;
-
-
-}
-
-.notepad:hover { background: #fff; }
-
-.notepad::before, .notepad .btn {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	box-sizing: border-box;
-}
-
-.notepad::before {
-	content: ' ';
-	width: 100%;
-	height: 100%;
-	background: inherit;
-	position: absolute;
-	filter: blur(4px);
-}
-
-.notepad .btn {
-	background: linear-gradient(
-	147deg, #000000 0%, #181818 74%
-	);
-	width: 9.8em;
-	height: 3.3em;
-	text-align: center;
-	text-decoration: none;
-	padding: 1.1em;
-	color: #fff;
-	font-size: 1.1em;
-	letter-spacing: 3px;
-}
-
-.notepad::before, .tutorial .btn {
+.database::before, .dashboard::before, .notepad::before, .database .btn, .dashboard .btn, .notepad .btn {
 	position: absolute;
 	top: 50%;
 	left: 50%;
