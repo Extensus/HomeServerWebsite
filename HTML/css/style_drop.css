@@ -47,9 +47,10 @@ header .light {
 }
 
 #top-navbar {
+    margin: 2%;
     position: absolute;
-    top: 2%;
-    left: 2%
+    top: 0;
+    left: 0;
 }
 
 .action-container {
@@ -61,9 +62,9 @@ header .light {
 }
 
 .drop-zone {
-    margin: 6px;
+    margin: 1%;
     background: #1a1a1a;
-    max-width: 200px;
+    width: 200px;
     height: 200px;
     padding: 25px;
     text-align: center;
@@ -76,8 +77,14 @@ header .light {
     border-radius: 10px;
     position: relative;
     z-index: 3;
+    transition: width 1s ease-in-out, height 1s ease-in-out;
 }
 
+.drop-zone:hover {
+    width: 1200px;
+    height: 380px;
+    
+}
 .drop-zone--over {
     border-style: solid;
 }
@@ -129,12 +136,19 @@ header .light {
     text-align: center;
     box-sizing: border-box;
     background: linear-gradient( 155deg, #020024 0%, red 0%, #ffab00 12%, #e0ff00 24%, #00ff08 36%, #00e4ff 48%, #0005ff 60%, #fe00e7 72%, red 84%, #ffa200 96%);
-    width: 13.6em;
     height: 4em;
     animation: borderAnim 55s linear infinite;
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
     transition: 0.3s;
+}
+
+.btn_back {
+    width: 4.9em
+}
+
+#file-submit {
+    width: 13.6em;
 }
 
 .btn_back:hover,
@@ -166,7 +180,6 @@ header .light {
 .btn_back .btn,
 #file-submit .btn {
     background: linear-gradient( 147deg, #000000 0%, #181818 74%);
-    width: 12em;
     height: 3.3em;
     text-align: center;
     text-decoration: none;
@@ -174,6 +187,14 @@ header .light {
     color: #fff;
     font-size: 1.1em;
     letter-spacing: 3px;
+}
+
+.btn_back .btn {
+    width: 4em;
+}
+
+#file-submit .btn {
+    width: 12em;
 }
 
 @keyframes borderAnim {
