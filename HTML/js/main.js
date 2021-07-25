@@ -1,4 +1,4 @@
-const grid = document.querySelector('#hex-grid');
+const grid = document.querySelector('#hex-grid-background');
 const light = document.querySelector('.light')
 const actionContainer = document.querySelector('.action-container')
 

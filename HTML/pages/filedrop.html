@@ -1,36 +1,48 @@
 <!DOCTYPE html5>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="File drop zone">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/normalize.css">
-		<link rel="stylesheet" href="../css/style_drop.css">
-		<title>database</title>
-    </head>
-    <body>
-        <div class="container">
-			<header id="hex-grid">
-				<div class="light"></div>
-				<div class="grid"></div>
-            </header>
-            <div class="action-container">
-                <div class="drop-zone">
-                    <span id="drop-zone__prompt" class="drop-zone__prompt">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="File drop zone">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style_drop.css">
+    <title>database</title>
+</head>
+
+<body>
+    <div id="base-container" class="container">
+        <header id="hex-grid-background" class="background">
+            <div id="background-light" class="light"></div>
+            <div id="background-grid-image" class="grid"></div>
+        </header>
+        <div id="top-navbar" class="navbar">
+            <div id="return button" class="btn_back">
+                <a class="btn" href="../text.html">Back to Main</a>
+            </div>
+        </div>
+        <div class="action-container">
+            <div class="drop-zone">
+                <span id="drop-zone__prompt" class="drop-zone__prompt">
                         <p id="temp-text">Drop file here or click to upload</p>
                         <ul id="uploadedFiles">
                         </ul>
                     </span>
+                <form action="../uploads/" method="POST" enctype="multipart/form-data">
                     <input type="file" name="myFile" class="drop-zone__input">
-                </div>
-                <div id="return button" class="btn_back">
-                    <a class="btn" href="../text.html">Back to Main</a>
-                </div>
+                    <input type="submit" id="uploader" value="Upload">
+                </form>
+            </div>
+            <div id="file-submit" class="file-upload">
+                <a class="btn" href="../text.html" onclick="document.getElementById('uploader').click()">
+                        Upload Files</a>
             </div>
         </div>
-        <script src="../js/main.js" async defer></script>
-		<script src="../js/filedrop.js" async defer></script>
-    </body> 
+    </div>
+    <script src="../js/main.js" async defer></script>
+    <script src="../js/filedrop.js" async defer></script>
+</body>
+
 </html>
