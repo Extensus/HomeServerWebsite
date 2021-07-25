@@ -1,7 +1,7 @@
 const dropZoneElement = document.getElementById('.drop-zone');
 
 let interval = null;
-dropZoneElement.addEventListener('change', (event) =>
+dropZoneElement.addEventListener('change', (event) => {
     clearInterval(interval); 
     interval = setInterval(frame, 5);
     let width = 0;
@@ -16,4 +16,4 @@ dropZoneElement.addEventListener('change', (event) =>
             //dropZoneElement.style.height = height + 'px';
         }
     }
-)
+})
