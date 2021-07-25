@@ -7,9 +7,9 @@ const port = 5000;
 const site = 'http://localhost:5000/';
 
 
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, 'HTML')));
 
-app.use('/', (req, res, next) => {
+app.use('', (req, res, next) => {
     res.sendFile(path.join(__dirname, 'HTML', 'text.html'));
 });
 
