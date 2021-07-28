@@ -1,6 +1,6 @@
 const { readFileSync, writeFileSync } = require('fs');
 
-const express = require('express');
+let express = require('express');
 const app = express();
 const path = require('path');
 const port = 5000;
