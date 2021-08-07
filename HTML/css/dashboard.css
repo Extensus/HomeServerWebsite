@@ -158,59 +158,60 @@ header .light {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    width: 160vh;
+    width: 1200px;
 }
 
 .dashboard-container {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, 599px);
+    grid-gap: 1px;
     width: 100%;
     height: 100%;
     position: relative;
     z-index: 3;
-}
-
-.stat-overview {
-    padding: 10px;  
-    display: flex;
-    background: rgba( 255, 255, 255, 0.50 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background-color: hsla(0, 0%, 36%, 0.5);
     backdrop-filter: blur( 3.5px );
     -webkit-backdrop-filter: blur( 3.5px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid hsla(0, 0%, 100%, 0.18);
+}
+
+.stat-overview {
+    grid-area: 1 / 1 / span 2 / 1;
+    padding: 10px;  
 }
 
 .statcircle-wrapper {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
 }
 
-.text-elm {
-    height: 100%;
-}
-
-#statcircle-info > p {
-    margin: 6px;
+.text-elm > p , #statcircle-info {
+    margin: 18px;
     color: #fff;
-}
+} 
 
 .information-board {
-    background: rgba( 255, 255, 255, 0.50 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    display: flex;
+    min-width: 500px;
+    grid-area: 1 / 2 / span 1 / 3;
+    background-color: hsla(0, 0%, 99%, 0.5);
     backdrop-filter: blur( 3.5px );
     -webkit-backdrop-filter: blur( 3.5px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid hsla(0, 0%, 99%, 0.5);
 }
 
 .agenda {
-    background: rgba( 255, 255, 255, 0.50 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    display: flex;
+    min-width: 500px;
+    grid-area: 2 / 2 / span 1 / 3;
+    background-color: hsla(0, 0%, 99%, 0.5);
     backdrop-filter: blur( 3.5px );
     -webkit-backdrop-filter: blur( 3.5px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid hsla(0, 0%, 99%, 0.5);
 }
 
 .statcircle {
