@@ -77,17 +77,21 @@ header .light {
     border-radius: 10px;
     position: relative;
     z-index: 3;
-    transition: width 0.5s ease-in, height 0.5s ease-in;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+
 }        
 
 .drop-zone:hover {
     width: 1200px;
     height: 380px;
-    transition: width 1s ease-out, height 1s ease-out;
+    transition: width 1s ease-in-out, height 1s ease-in-out;
 }
 
 .drop-zone--over {
     border-style: solid;
+    width: 1200px;
+    height: 380px;
+    transition: width 1s ease-in-out, height 1s ease-in-out;
 }
 
 .drop-zone__input {
