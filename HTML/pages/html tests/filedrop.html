@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="File drop zone">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/filedrop.css">
-    <script src="../js/main.js" async defer></script>
-    <script src="../js/filedrop.js" async defer></script>
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/filedrop.css">
+    <script src="../../js/main.js" async defer></script>
+    <script src="../../js/filedrop.js" async defer></script>
     <title>database</title>
 </head>
 
@@ -22,8 +22,8 @@
         </header>
         <div id="top-navbar" class="navbar">
             <div id="return button" class="btn_back">
-                <a class="btn" href="../text.html">
-                    <img src="../images/arrow-left.svg">
+                <a class="btn" href="./text.html">
+                    <img src="../../images/arrow-left.svg">
                 </a>
             </div>
         </div>
@@ -34,17 +34,16 @@
                         <ul id="uploadedFiles">
                         </ul>
                     </span>
-                <form action="../uploads/" method="POST" enctype="multipart/form-data">
+                <form action="../../uploads/" method="POST" enctype="multipart/form-data">
                     <input type="file" name="myFile" class="drop-zone__input">
                     <input type="submit" id="uploader" value="Upload">
                 </form>
             </div>
             <div id="file-submit" class="file-upload">
-                <a class="btn" href="../text.html" onclick="document.getElementById('uploader').click()">
+                <a class="btn" href="./text.html" onclick="document.getElementById('uploader').click()">
                         Upload Files</a>
             </div>
         </div>
     </div>
 </body>
-
 </html>
