@@ -30,4 +30,13 @@ app.get('/notepad', (req, res) => {
     res.render(`notepad`)
 });
 
+app.get('/api', (req, res) => {
+    text = {
+        Title: 'Api Response',
+        port: `${port}`,
+    }
+    resContent = JSON.stringify(text)
+    res.send(text)
+});
+
 app.listen(port, () => console.info(`App available on http://localhost:${port}`))
