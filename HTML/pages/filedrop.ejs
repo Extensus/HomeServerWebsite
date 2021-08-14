@@ -1,7 +1,5 @@
 <!DOCTYPE html5>
-
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +12,6 @@
     <script src="js/filedrop.js" async defer></script>
     <title>database</title>
 </head>
-
 <body>
     <div id="base-container" class="container">
         <header id="hex-grid-background" class="background">
@@ -31,11 +28,11 @@
         <div class="action-container">
             <div class="drop-zone">
                 <span id="drop-zone__prompt" class="drop-zone__prompt">
-                        <p id="temp-text">Upload Here</p>
+                        <id id="temp-text">Quick Upload</id>
                         <ul id="uploadedFiles">
                         </ul>
                     </span>
-                <form action="../uploads/" method="POST" enctype="multipart/form-data">
+                <form action="../upload/" method="POST" enctype="multipart/form-data">
                     <input type="file" name="myFile" class="drop-zone__input">
                     <input type="submit" id="uploader" value="Upload">
                 </form>
@@ -47,5 +44,4 @@
         </div>
     </div>
 </body>
-
 </html>

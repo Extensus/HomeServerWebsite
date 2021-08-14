@@ -23,6 +23,7 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
     dropZoneElement.addEventListener("dragover", (e) => {
       e.preventDefault();
       dropZoneElement.classList.add("drop-zone--over");
+      
     });
   
     ["dragleave", "dragend"].forEach((type) => {

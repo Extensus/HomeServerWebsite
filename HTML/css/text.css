@@ -5,7 +5,7 @@
 	align-items: center;
 }
 
-.database, .dashboard, .notepad {
+.database, .dashboard, .notepad, .api{
 	box-sizing: border-box;
 	background: linear-gradient(
 	155deg, #020024 0%, red 0%,
@@ -16,17 +16,17 @@
 	);
 	width: 11em;
 	height: 4em;
-	animation: borderAnim 55s linear infinite;
+	animation: borderAnim 50s linear infinite;
 	position: relative;
 	font-family: Arial, Helvetica, sans-serif;
-	transition: 0.3s;
+	transition: 0.03s;
 }
 
-.database:hover, .dashboard:hover, .notepad:hover {
+.database:hover, .dashboard:hover, .notepad:hover, .api:hover{
 	background: #fff;
 }
 
-.database::before, .dashboard::before, .notepad::before, .database .btn, .dashboard .btn, .notepad .btn {
+.database::before, .dashboard::before, .notepad::before, .api::before, .database .btn, .dashboard .btn, .notepad .btn, .api .btn {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -34,7 +34,7 @@
 	box-sizing: border-box;
 }
 
-.database::before, .dashboard::before, .notepad::before {
+.database::before, .dashboard::before, .notepad::before, .api::before {
 	content: ' ';
 	width: 100%;
 	height: 100%;
@@ -43,7 +43,7 @@
 	filter: blur(4px);
 }
 
-.database .btn, .dashboard .btn, .notepad .btn {
+.database .btn, .dashboard .btn, .notepad .btn, .api .btn {
 	background: linear-gradient(
 		147deg, #000000 0%, #181818 74%
 		);
@@ -57,7 +57,7 @@
 	letter-spacing: 3px;
 }
 
-.database::before, .dashboard::before, .notepad::before, .database .btn, .dashboard .btn, .notepad .btn {
+.database::before, .dashboard::before, .notepad::before, .api::before, .database .btn, .dashboard .btn, .notepad .btn, .api .btn {
 	position: absolute;
 	top: 50%;
 	left: 50%;

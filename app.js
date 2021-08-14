@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const site = `http://localhost:${port}`
 
 app.use(express.static('HTML'))
 app.use('/css', express.static(`${__dirname}/HTML/css`))
@@ -33,10 +34,18 @@ app.get('/notepad', (req, res) => {
 app.get('/api', (req, res) => {
     text = {
         Title: 'Api Response',
+        site: 'http://localhost',
         port: `${port}`,
+        fullSite: `${site}`,
+        query: req.query,
+        headers: req.rawHeaders
     }
-    resContent = JSON.stringify(text)
-    res.send(text)
+    res.send(JSON.stringify(text))
+    console.info(req)
 });
 
-app.listen(port, () => console.info(`App available on http://localhost:${port}`))
+app.post('/upload/', (req, res) => {
+    res.send(JSON.stringify(site))
+});
+
+app.listen(port, () => console.info(`App available on ${site}`))
