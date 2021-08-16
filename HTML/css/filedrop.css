@@ -67,9 +67,6 @@
     text-align: center;
 }
 
-#uploader {
-    visibility: hidden;
-}
 
 #uploadedFiles {
     list-style-type: none;

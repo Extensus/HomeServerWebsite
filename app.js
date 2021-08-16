@@ -1,4 +1,9 @@
 const express = require('express');
+const multer = require('multer');
+const uuid = require('uuid').v4;
+
+const upload = multer({ dest: './upload/' });
+
 const app = express();
 const port = 3000;
 const site = `http://localhost:${port}`
@@ -38,14 +43,18 @@ app.get('/api', (req, res) => {
         port: `${port}`,
         fullSite: `${site}`,
         query: req.query,
-        headers: req.rawHeaders
-    }
-    res.send(JSON.stringify(text))
-    console.info(req)
+        params: req.params,
+        headers: req.rawHeaders,
+        parsedOriginalUrl: req._parsedOriginalUrl,
+        parsedQuery: req._parsedOriginalUrl["query"]
+    };
+    return res.json(text);
+    //console.log(req._parsedOriginalUrl["query"])
+    //console.info(req)
 });
 
-app.post('/upload/', (req, res) => {
-    res.send(JSON.stringify(site))
+app.post('/upload', upload.single(`uploadDoc`), (req, res) => {
+    return res.json({ status: 'OK' });
 });
 
 app.listen(port, () => console.info(`App available on ${site}`))
