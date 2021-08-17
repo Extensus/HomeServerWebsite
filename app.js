@@ -20,8 +20,6 @@ const site = `http://localhost:${port}`
 
 app.use(express.static('HTML'))
 app.use('/css', express.static(`${__dirname}/HTML/css`))
-app.use('/form', express.static(`${__dirname}/HTML/form`))
-app.use('/submit', express.static(`${__dirname}/HTML/form/submit`))
 app.use('/images', express.static(`${__dirname}/HTML/images`))
 app.use('/js', express.static(`${__dirname}/HTML/js`))
 app.use('/pages', express.static(`${__dirname}/HTML/pages`))
