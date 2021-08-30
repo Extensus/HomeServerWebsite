@@ -1,16 +1,12 @@
 document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
     const dropZoneElement = inputElement.closest(".drop-zone");
-  
+
+    // conntects the input element to the dropzone for clicks //
     dropZoneElement.addEventListener("click", (e) => {
       inputElement.click();
     });
-  
-    inputElement.addEventListener("change", (e) => {
-      if (inputElement.files.length) {
-        {}
-      }
-    });
 
+    //handles the resize event for only the mouse ***css***
     dropZoneElement.addEventListener("mouseover", (e) => {
       e.preventDefault();
       dropZoneElement.classList.add("drop-zone--over");
@@ -19,11 +15,11 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
     dropZoneElement.addEventListener("mouseout", (e) => {
       dropZoneElement.classList.remove("drop-zone--over");
     });
-  
+    
+    //handles the dragover event for file drop ***css***
     dropZoneElement.addEventListener("dragover", (e) => {
       e.preventDefault();
       dropZoneElement.classList.add("drop-zone--over");
-      
     });
   
     ["dragleave", "dragend"].forEach((type) => {
@@ -31,9 +27,20 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
         dropZoneElement.classList.remove("drop-zone--over");
       });
     });
-  
+    
+
+    // fun part for handling the file drop behavior
     dropZoneElement.addEventListener("drop", (e) => {
       e.preventDefault();
       dropZoneElement.classList.remove("drop-zone--over");
+      {
+        listElement = document.querySelector('#uploadedFiles');
+        const li = document.createElement('li');
+
+        inputElement.files = e.dataTransfer.files;
+        file = e.dataTransfer.files[0];
+        li.innerHTML = file.name;
+        dropZoneElement.appendChild(li)
+      }
     });
   });
