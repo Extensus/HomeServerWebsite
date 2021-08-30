@@ -23,7 +23,7 @@
     position: relative;
     z-index: 3;
     transition: width 0.5s cubic-bezier(0.76, 0.8, 0.46, 0.96), height 0.5s cubic-bezier(0.76, 0.8, 0.46, 0.96);
-
+    overflow: hidden;
 }
 
 .drop-zone__prompt {
