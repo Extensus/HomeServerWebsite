@@ -28,23 +28,23 @@ app.use('/uploads', express.static(`${__dirname}/HTML/uploads`))
 app.set('views', './HTML/pages')
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     res.render(`text`)
 });
 
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard', async (req, res) => {
     res.render(`dashboard`)
 });
 
-app.get('/filedrop', (req, res) => {
+app.get('/filedrop', async (req, res) => {
     res.render(`filedrop`)
 });
 
-app.get('/notepad', (req, res) => {
+app.get('/notepad', async (req, res) => {
     res.render(`notepad`)
 });
 
-app.get('/api', (req, res) => {
+app.get('/api', async (req, res) => {
     text = {
         Title: 'Api Response',
         site: 'http://localhost',
@@ -56,10 +56,10 @@ app.get('/api', (req, res) => {
         parsedOriginalUrl: req._parsedOriginalUrl,
         parsedQuery: req._parsedOriginalUrl["query"]
     };
-    return res.json(text);
+    return res.json({ text });
 });
 
-app.post('/uploads', upload.array('uploadDoc'), (req, res) => {
+app.post('/uploads', upload.array('uploadDoc'), async (req, res) => {
     res.redirect('/filedrop');
     //res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
 });
