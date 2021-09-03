@@ -3,6 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const uuid = require('uuid').v4;
 const app = express();
+app.disable("x-powered-by");
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'uploads')
@@ -59,8 +60,17 @@ app.get('/api', async (req, res) => {
     return res.json({ text });
 });
 
-app.post('/uploads', upload.array('uploadDoc'), async (req, res) => {
-    res.redirect('/filedrop');
+app.post('/filedrop', upload.array('uploadDoc'), async (req, res) => {
+    {
+        listElement = document.querySelector('#uploadedFiles');
+        const li = document.createElement('li');
+
+        inputElement.files = e.dataTransfer.files;
+        file = e.dataTransfer.files[0];
+        li.innerHTML = { req };
+        dropZoneElement.appendChild(li)
+      }
+    //res.redirect('/filedrop');
     //res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
 });
 
