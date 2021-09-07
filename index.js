@@ -50,10 +50,8 @@ app.get('/api', async (req, res) => {
         port: `${port}`,
         fullSite: `${site}`,
         query: req.query,
-        params: req.params,
         headers: req.rawHeaders,
         parsedOriginalUrl: req._parsedOriginalUrl,
-        parsedQuery: req._parsedOriginalUrl["query"]
     };
     return res.json({ text });
 });
