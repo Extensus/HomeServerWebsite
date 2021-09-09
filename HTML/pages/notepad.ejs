@@ -6,12 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Main Page">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/notepad.css">
 		<link rel="stylesheet" href="css/main.css">
         <script src="js/main.js" async defer></script>
-        <script src="js/notepad.js" async defer></script>
 		<title>Notepad</title>
     </head>
 
@@ -29,19 +27,11 @@
                 </div>
             </div>
 			<div class="action-container">
-                <div class="notepad-wrapper">
-                    <textarea name="noteName" id="filename" class="notename" placeholder="Note Name" cols="1" rows="1"></textarea>
+                <form class="notepad-wrapper" action="form/submit/" method="post">
                     <br>
-                    <textarea name="notepad" id="primary-note" class="notepad" placeholder="Enter Notes here..." cols="140" rows="30"></textarea>
+                    <textarea name="notepad" id="primary-note" class="notepad" cols="140" rows="30"></textarea>
                     </br>
-                    <form name="notepad" class="file-submiter" action="./notepad/" method="POST" enctype="multipart/form-data">
-                        <input id="saveinput" type="hidden" name="uploadNotes" value="">
-                    </form>
-                    
-                    <div class="button-wrapper">
-                        <button id="file-submiter" class="btn" type="submit" form="notepad">Save Notes</button>
-                    </div>
-                </div>
+                </form>
 			</div>
 		</div>
     </body>

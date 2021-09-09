@@ -35,14 +35,21 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
       dropZoneElement.classList.remove("drop-zone--over");
       file = e.dataTransfer.files[0];
       const data = new FormData();
-      data.append('uploadDoc', file, file.name)
-      console.log(data.has('uploadDoc'))
-      console.log(data)
 
-      fetch("http://localhost:3000/filedrop", {
+      data.append('uploadDoc', file)
+      fetch("http://localhost:3000/file/drop", {
         method: "POST",
         body: data,
-      }).catch((e) => console.log(e));
-      console.log('done');
+      });
+
+      /*{
+        listElement = document.querySelector('#uploadedFiles');
+        const li = document.createElement('li');
+
+        inputElement.files = e.dataTransfer.files;
+        file = e.dataTransfer.files[0];
+        li.innerHTML = file.name;
+        dropZoneElement.appendChild(li)
+      }*/
     });
   });
