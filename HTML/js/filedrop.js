@@ -35,11 +35,14 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
       dropZoneElement.classList.remove("drop-zone--over");
       file = e.dataTransfer.files[0];
       const data = new FormData();
+      data.append('uploadDoc', file, file.name)
+      console.log(data.has('uploadDoc'))
+      console.log(data)
 
-      data.append('uploadDoc', file)
       fetch("http://localhost:3000/filedrop", {
         method: "POST",
         body: data,
-      });
+      }).catch((e) => console.log(e));
+      console.log('done');
     });
   });

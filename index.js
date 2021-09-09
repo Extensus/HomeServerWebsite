@@ -68,11 +68,11 @@ app.get('/api', async (req, res) => {
 });
 
 app.post('/filedrop', uploadFiles.array('uploadDoc'), async (req, res) => {
-    res.redirect('/filedrop');
-    //res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
+    //res.redirect('/filedrop');
+    res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
 });
 
-app.post('/note/pad', uploadNotes.array('uploadNotes'), async (req, res) => {
+app.post('/notepad', uploadNotes.array('uploadNotes'), async (req, res) => {
     res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
 });
 
