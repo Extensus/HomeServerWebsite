@@ -58,12 +58,12 @@ app.get('/api', async (req, res) => {
     return res.json({ text });
 });
 
-app.post('/filedrop', upload.array('uploadDoc'), async (req, res) => {
-    res.redirect('/filedrop');
-    //res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
+app.post('/note/pad', upload.array('uploadDoc'), async (req, res) => {
+    //res.redirect('/filedrop');
+    res.json({ status: 'OK', uploaded: req.files.length });
 });
 app.post('/file/drop', upload.array('uploadDoc'), async (req, res) => {
-    res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
+    res.json({ status: 'OK', uploaded: req.files.length });
 });
 
 app.listen(port, () => console.info(`App available on ${site}`))
