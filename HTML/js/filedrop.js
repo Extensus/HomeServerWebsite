@@ -37,19 +37,9 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
       const data = new FormData();
 
       data.append('uploadDoc', file)
-      fetch("http://localhost:3000/file/drop", {
+      fetch("http://localhost:3000/filedrop", {
         method: "POST",
         body: data,
       });
-
-      /*{
-        listElement = document.querySelector('#uploadedFiles');
-        const li = document.createElement('li');
-
-        inputElement.files = e.dataTransfer.files;
-        file = e.dataTransfer.files[0];
-        li.innerHTML = file.name;
-        dropZoneElement.appendChild(li)
-      }*/
     });
   });
