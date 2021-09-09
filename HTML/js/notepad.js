@@ -6,15 +6,15 @@ const fileUploadToServer = () => {
     console.log(txtBlob)
     let file = new File([txtBlob], `${filename}.txt`, {type: "text/plain"});
     console.log(file);
-    let data = new FormData();
-    data.append('uploadNotes', file)
-    console.log(data)
-    fetch("http://localhost:3000/notes", {
+    const data = new FormData();
+
+      data.append('uploadDoc', file)
+      fetch("http://localhost:3000/notepad", {
         method: "POST",
         body: data,
-        });
+      });
 };
-document.getElementById("file-submiter").addEventListener("click", fileUploadToServer);
+document.getElementById("file-submit").addEventListener("click", fileUploadToServer);
 
 
 /*function saveDynamicDataToServer(){

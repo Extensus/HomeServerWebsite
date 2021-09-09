@@ -6,10 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Main Page">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/notepad.css">
 		<link rel="stylesheet" href="css/main.css">
         <script src="js/main.js" async defer></script>
+        <script src="js/notepad.js" async defer></script>
 		<title>Notepad</title>
     </head>
 
@@ -26,12 +28,16 @@
                     </a>
                 </div>
             </div>
-			<div class="action-container">
-                <form class="notepad-wrapper" action="/notes" method="POST">
+            <div class="action-container">
+                <div class="notepad-wrapper">
+                    <textarea name="noteName" id="filename" class="notename" placeholder="Note Name" cols="1" rows="1"></textarea>
                     <br>
-                    <textarea name="notepad" id="primary-note" class="notepad" cols="140" rows="30"></textarea>
+                    <textarea name="notepad" id="primary-note" class="notepad" placeholder="Enter Notes here..." cols="140" rows="30"></textarea>
                     </br>
-                </form>
+                    <div class="button-wrapper">
+                        <button id="file-submit" class="btn">Save Notes</button>
+                    </div>
+                </div>
 			</div>
 		</div>
     </body>
