@@ -24,8 +24,8 @@ const storageNotes = multer.diskStorage({
         cb(null, originalname);
     }
 })
-const uploadFiles = multer({ storageFiles }); // or simply { dest: 'uploads/' }
-const uploadNotes = multer({ storageNotes }); // or simply { dest: 'notes/' }
+const upload = multer({ storageFiles }); // or simply { dest: 'uploads/' }
+//const uploadNotes = multer({ storageNotes }); // or simply { dest: 'notes/' }
 const port = 3000;
 const site = `http://localhost:${port}`
 
@@ -67,13 +67,13 @@ app.get('/api', async (req, res) => {
     return res.json({ text });
 });
 
-app.post('/file/drop', uploadFiles.array('uploadDoc'), async (req, res) => {
-    res.redirect('/filedrop');
-    //res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
+app.post('/filedrop', upload.array('uploadDoc'), async (req, res) => {
+    //res.redirect('/filedrop');
+    res.json({ status: 'OK', uploaded: req.files.length });
 });
 
-app.post('/note/pad', uploadNotes.array('uploadNotes'), async (req, res) => {
-    res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
+app.post('/note/pad', upload.array('uploadNotes'), async (req, res) => {
+    res.json({ status: 'OK', uploaded: req.files.length });
 });
 
 app.listen(port, () => console.info(`App available on ${site}`))
