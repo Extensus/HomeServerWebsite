@@ -9,7 +9,7 @@ const fileUploadToServer = () => {
     let data = new FormData();
     data.append('uploadNotes', file)
     console.log(data)
-    fetch("http://localhost:3000/notepad", {
+    fetch("http://localhost:3000/notes", {
         method: "POST",
         body: data,
         });
