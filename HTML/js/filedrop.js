@@ -37,7 +37,7 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
       const data = new FormData();
 
       data.append('uploadDoc', file)
-      fetch("http://localhost:3000/filedrop", {
+      fetch("http://localhost:3000/file/drop", {
         method: "POST",
         body: data,
       });

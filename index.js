@@ -67,7 +67,7 @@ app.get('/api', async (req, res) => {
     return res.json({ text });
 });
 
-app.post('/filedrop', uploadFiles.array('uploadDoc'), async (req, res) => {
+app.post('/file/drop', uploadFiles.array('uploadDoc'), async (req, res) => {
     res.redirect('/filedrop');
     //res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
 });
