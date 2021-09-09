@@ -2,7 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const app = express();
 app.disable("x-powered-by");
-const storage = multer.diskStorage({
+const storageFiles = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'uploads')
     },
@@ -13,7 +13,19 @@ const storage = multer.diskStorage({
         cb(null, originalname);
     }
 })
-const upload = multer({ storage }); // or simply { dest: 'uploads/' }
+const storageNotes = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'notes')
+    },
+    filename: (req, file, cb) => {
+        const { originalname } = file;
+        // or 
+        // uuid, or fieldname
+        cb(null, originalname);
+    }
+})
+const uploadFiles = multer({ storageFiles }); // or simply { dest: 'uploads/' }
+const uploadNotes = multer({ storageNotes }); // or simply { dest: 'notes/' }
 const port = 3000;
 const site = `http://localhost:${port}`
 
@@ -22,7 +34,6 @@ app.use('/css', express.static(`${__dirname}/HTML/css`))
 app.use('/images', express.static(`${__dirname}/HTML/images`))
 app.use('/js', express.static(`${__dirname}/HTML/js`))
 app.use('/pages', express.static(`${__dirname}/HTML/pages`))
-app.use('/uploads', express.static(`${__dirname}/HTML/uploads`))
 
 app.set('views', './HTML/pages')
 app.set('view engine', 'ejs')
@@ -56,11 +67,12 @@ app.get('/api', async (req, res) => {
     return res.json({ text });
 });
 
-app.post('/filedrop', upload.array('uploadDoc'), async (req, res) => {
+app.post('/filedrop', uploadFiles.array('uploadDoc'), async (req, res) => {
     res.redirect('/filedrop');
     //res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
 });
-app.post('/file/drop', upload.array('uploadDoc'), async (req, res) => {
+
+app.post('/note/pad', uploadNotes.array('uploadNotes'), async (req, res) => {
     res.json({ status: 'OK', uploaded: req.files.length, files: req.files});
 });
 
