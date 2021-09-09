@@ -6,12 +6,30 @@
     align-items: center;
 }
 
+.notename {
+    width: 1000px;
+    padding: 10px;
+    cursor: text;
+    color: #000;
+    border: 4px solid #0095777c;
+    border-radius: 10px;
+    position: relative;
+    z-index: 3;
+    background: #fff;
+}
+.notename {
+    margin-bottom: 20px;
+
+}
+.notename:focus-visible {
+    outline: none;
+}
 .notepad {
-    margin: 1%;
+    margin: 10px;
     padding: 0;
     background: #fff; 
     width: 1000px;
-    height: 600px;
+    height: 500px;
     padding: 25px;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
@@ -28,7 +46,8 @@
     outline: none;
 }
 
-.btn_back {
+.btn_back,
+#file-submit {
     margin: 6px;
     position: absolute;
     display: flex;
@@ -48,12 +67,19 @@
     width: 4.9em
 }
 
-.btn_back:hover {
+#file-submit {
+    width: 13.6em;
+}
+
+.btn_back:hover,
+#file-submit:hover {
     background: #fff;
 }
 
 .btn_back::before,
-.btn_back .btn {
+.btn_back .btn,
+#file-submit::before,
+#file-submit .btn {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -61,7 +87,8 @@
     box-sizing: border-box;
 }
 
-.btn_back::before {
+.btn_back::before,
+#file-submit::before {
     content: ' ';
     width: 100%;
     height: 100%;
@@ -70,7 +97,8 @@
     filter: blur(4px);
 }
 
-.btn_back .btn {
+.btn_back .btn,
+#file-submit .btn {
     background: linear-gradient( 147deg, #000000 0%, #181818 74%);
     height: 3.3em;
     text-align: center;
@@ -83,6 +111,10 @@
 
 .btn_back .btn {
     width: 4em;
+}
+
+#file-submit .btn {
+    width: 12em;
 }
 
 @keyframes borderAnim {
