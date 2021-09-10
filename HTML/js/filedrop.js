@@ -33,7 +33,7 @@ document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
     dropZoneElement.addEventListener("drop", (e) => {
       e.preventDefault();
       dropZoneElement.classList.remove("drop-zone--over");
-      file = e.dataTransfer.files[0];
+      let file = e.dataTransfer.files[0];
       const data = new FormData();
 
       data.append('uploadDoc', file)
