@@ -41,22 +41,23 @@ app.set('views', './HTML/pages')
 app.set('view engine', 'ejs')
 
 app.get('/', async (req, res) => {
-    res.render(`text`)
+    await res.render(`text`)
 });
 
 app.get('/dashboard', async (req, res) => {
-    res.render(`dashboard`)
+    await res.render(`dashboard`)
 });
 
 app.get('/filedrop', async (req, res) => {
-    res.render(`filedrop`)
+    await res.render(`filedrop`)
 });
 
 app.get('/notepad', async (req, res) => {
-    res.render(`notepad`)
+    await res.render(`notepad`)
 });
 
 app.get('/api', async (req, res) => {
+    try {
     const text = {
         Title: 'Api Response',
         site: 'http://localhost',
@@ -68,23 +69,57 @@ app.get('/api', async (req, res) => {
         parsedOriginalUrl: req._parsedOriginalUrl,
         parsedQuery: req._parsedOriginalUrl["query"]
     };
-    return res.json({ text });
+    return await res.json({ text });
+    }
+    catch(err) {
+
+    } finally {
+        
+    }
 });
 
 app.post('/file/drop', upload.array('uploadDoc'), async (req, res) => {
-    res.redirect('/filedrop');
+    try {
+    await res.redirect('/filedrop');
+    } 
+    catch(err) {
+
+    } finally {
+
+    }
 });
 
 app.post('/filedrop', upload.array('uploadDoc'), async (req, res) => {
-    res.json({ status: 'OK', uploaded: req.files.length });
+    try {
+    await res.json({ status: 'OK', uploaded: req.files.length });
+    }
+    catch(err) {
+    
+    } finally {
+
+    }
 });
 
-app.post('/notes', uploadNote.array('uploadNote'), async (req, res) => {
-    res.redirect('/notepad')
+app.post('/notes', upload.array('uploadNote'), async (req, res) => {
+    try {
+    await res.redirect('/notepad')
+    }
+    catch(err) {
+
+    } finally {
+
+    }
 });
 
-app.post('/notepad', uploadNote.array('uploadNote'), async (req, res) => {
-    res.json({ status: document.status, uploaded: req.files.length });
+app.post('/notepad', upload.array('uploadNote'), async (req, res) => {
+    try {
+    await res.json({ status: document.status, uploaded: req.files.length });
+    }
+    catch(err) {
+
+    } finally {
+        
+    }
 });
 
 app.listen(port, () => console.info(`App available on ${site}`))
