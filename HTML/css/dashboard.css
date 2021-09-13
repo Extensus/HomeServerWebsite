@@ -150,13 +150,13 @@
 }
 
 svg {
-   -webkit-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
 
 .circle_animation {
-  stroke-dasharray: 440; /* this value is the pixel circumference of the circle */
-  stroke-dashoffset: 440;
+    stroke-dasharray: 440; /* this value is the pixel circumference of the circle */
+    stroke-dashoffset: 440;
 }
 
 .statcircle .circle_animation {
@@ -165,14 +165,14 @@ svg {
 }
 
 @-webkit-keyframes statcircle {
-  to {
-    stroke-dashoffset: 80; 
-  }
+    to {
+        stroke-dashoffset: 80; 
+    }
 }
 
 @keyframes statcircle {
-  to {
-    stroke-dashoffset: 850;
-  }
+    to {
+        stroke-dashoffset: 850;
+    }
 }
 
