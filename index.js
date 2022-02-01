@@ -25,7 +25,7 @@ const storageNotes = multer.diskStorage({
     }
 })
 const upload = multer({ storage }); // or simply { dest: 'uploads/' }
-const uploadNote = multer({ storageNotes }); // or simply { dest: 'uploads/' }
+const uploadDoc = multer({ storageNotes }); // or simply { dest: 'uploads/' }
 const port = 3000;
 const site = `http://localhost:${port}`
 
@@ -61,13 +61,13 @@ app.get('/api', async (req, res) => {
     const text = {
         Title: 'Api Response',
         site: 'http://localhost',
-        port: `${port}`,
-        fullSite: `${site}`,
+        port,
+        fullSite: site,
         query: req.query,
         params: req.params,
         headers: req.rawHeaders,
         parsedOriginalUrl: req._parsedOriginalUrl,
-        parsedQuery: req._parsedOriginalUrl["query"]
+        parsedQuery: req._parsedOriginalUrl.query
     };
     return await res.json({ text });
     }
